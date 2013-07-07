@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplicationPropertyChanged.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplicationPropertyChanged" 
+        Title="MainWindow" Height="350" Width="525">
+    <!--added xmlns:local="clr-namespace:WpfApplicationPropertyChanged" the same name as the ViewModel-->
+    <Window.DataContext>
+        <!-- Declaratively create an instance of our ViewModel -->
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="151" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
+            <TextBox Text="{Binding UpdateControl}" Height="23" TextWrapping="Wrap" />
+            <TextBlock TextWrapping="Wrap" Text="{Binding UpdateControl}" />
+            <Label  Content="{Binding UpdateControl}" Height="34"/>
+            <Button Name="ButtonUpdateArtist" Content="{Binding UpdateControl}" Command="{Binding UpdateArtistName}" Height="28"/>
+        </StackPanel>
+    </Grid>
+</Window>
