@@ -13,7 +13,17 @@
             <TextBox Text="{Binding UpdateControl}" Height="23" TextWrapping="Wrap" />
             <TextBlock TextWrapping="Wrap" Text="{Binding UpdateControl}" />
             <Label  Content="{Binding UpdateControl}" Height="34"/>
-            <Button Name="ButtonUpdateArtist" Content="{Binding UpdateControl}" Command="{Binding UpdateArtistName}" Height="28"/>
+            <Button Name="ButtonUpdateArtist" Content="{Binding UpdateControl}" Command="{Binding UpdateName}" Height="28"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="144" Margin="10,166,0,0" VerticalAlignment="Top" Width="151">
+            <TextBox Name="TextBoxBinding" Height="23" TextWrapping="Wrap" Text="TextBox"/>
+            <Label Content="{Binding Text, ElementName=TextBoxBinding, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding Text, ElementName=TextBoxBinding, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="144" Margin="372,166,0,0" VerticalAlignment="Top" Width="135">
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Path=UpdateTextBox, Mode=TwoWay}" Name="TextBox2Binding" />
+            <Button Content="Button" Name="ButtonContent" Command="{Binding UpdateLabelName}"/>
+            <Label Content="{Binding UpdateLabel}"/>
         </StackPanel>
     </Grid>
 </Window>
